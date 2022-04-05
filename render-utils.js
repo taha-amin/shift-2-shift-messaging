@@ -1,6 +1,6 @@
 import { formatDate } from './date-utils.js';
 import { decrementRating, incrementRating } from './fetch-utils.js';
-import { fetchAndDisplay } from '../employee';
+import { fetchAndDisplay } from '../employee/employee.js';
 
 export function renderMessages(profiles) {
     const messagesEl = document.createElement('div');

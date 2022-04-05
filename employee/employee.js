@@ -1,6 +1,10 @@
-import { createMessage, getMessagesByRecipient, sendMessage, checkAuth, getProfile, getMyProfile, incrementRating, decrementRating } from '../fetch-utils.js';
+import { getUser, sendMessage, checkAuth, getProfile, incrementRating, decrementRating } from '../fetch-utils.js';
 
-import { renderMessages, renderRating } from '../fetch-utils.js';
+import { renderMessages, renderRating } from '../render-utils.js';
+
+checkAuth();
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
 
 const upButton = document.querySelector('.up-vote');
 const downButton = document.querySelector('.down-vote');
@@ -16,9 +20,7 @@ const messageContainer = document.querySelector('.message-container');
 const profileContainer = document.querySelector('.profile-container');
 const usernameHeader = document.querySelector('.username-header');
 const usernameEl = document.querySelector('.username');
-const params = new URLSearchParams(window.location.search);
-const id = params.get(id);
-
+const form = document.querySelector('form');
 
 window.addEventListener('load', async ()=>{
 
@@ -37,7 +39,7 @@ downButton.addEventListener('click', async ()=>{
     await fetchAndDisplay(profile);
 });
 
-async function fetchAndDisplay(){
+export async function fetchAndDisplay(){
     profileContainer.textContent = '';
 
     const profile = await getProfile(id);
@@ -50,3 +52,22 @@ async function fetchAndDisplay(){
     profileContainer.append(messagesEl, profileRatingEl);
 
 }
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const fromUser = await getUser();
+
+    await sendMessage({
+        text: data.get('text'),
+        from_email: fromUser.email,
+        recipient_id: id,
+
+    });
+
+    form.reset();
+
+    await fetchAndDisplay();
+
+});
