@@ -6,7 +6,7 @@ export function renderMessages(profiles) {
     const messagesEl = document.createElement('div');
     const messagesHeader = document.createElement('h3');
 
-    messagesHeader.textContent = `Jobs done by ${profiles.email}`;
+    messagesHeader.textContent = `Leave a Message for ${profiles.email}`;
     messagesEl.classList.add('messages');
     messagesEl.append(messagesHeader);
 

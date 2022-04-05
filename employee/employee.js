@@ -15,6 +15,7 @@ const voteDownButton = document.querySelector('.down-vote');
 const messagesHeader = document.querySelector('.messages-header');
 const messagesDiv = document.querySelector('.messages');
 const sendMessageH3 = document.querySelector('.send-message');
+const return2ProfilesButton = document.getElementById('back-to-profiles');
 
 const messageContainer = document.querySelector('.message-container');
 const profileContainer = document.querySelector('.profile-container');
@@ -26,6 +27,10 @@ window.addEventListener('load', async ()=>{
 
     await fetchAndDisplay(); //write this!
 
+});
+
+return2ProfilesButton.addEventListener('click', ()=>{
+    window.location.href = '../employees';
 });
 
 upButton.addEventListener('click', async ()=>{
