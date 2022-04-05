@@ -42,7 +42,7 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+
 }
 
 header {
@@ -51,6 +51,12 @@ header {
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #297373;
 }
 
 h2 {
@@ -81,7 +87,7 @@ footer {
     height: var(--footer-height);
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: #39393A;
     box-shadow: var(--shadow);
 }
 
@@ -128,4 +134,83 @@ footer {
 
 .auth-container button {
     margin: 10px;
+}
+
+.employee-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.employee-list-item {
+    background-color: #ff8552;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px;
+}
+.body-employees {
+    background-color: #E9D758;
+}
+.header-employees {
+    background-color: #297373;
+}
+.employee-list-item:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.employee-body {
+    background-image: url('/assets/noods.jpg');
+    background-size: 100vw;
+    
+}
+.employee-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2973739a;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 20px;
+    color: #E9D758;
+}
+
+.profile-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    background-color: #ff8552;
+    padding: 15px;
+    border-radius: 15px;
+    color: #297373;
+    font-weight: bold;
+    border: #297373;
+}
+.message:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px 5px #000000;;
+}
+
+button {
+    background-color: #297373;
+    padding: 15px;
+    border-radius: 10px;
+}
+button:hover {
+    background-color: #ff8552;
+}
+.login-body {
+    background-image: url('/assets/doors.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.auth-main {
+    background-color: #39393aa8;
+    width: 80%;
+    margin-left: 12%;
+    color:  rgb(252, 173, 173);
 }
