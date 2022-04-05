@@ -1,4 +1,4 @@
-import { formatDate } from "./date-utils.js";
+import { formatDate } from './date-utils.js';
 
 export function renderMessages(profiles) {
     const messagesEl = document.createElement('div');
