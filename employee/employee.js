@@ -1,4 +1,4 @@
-import { getUser, sendMessage, checkAuth, getProfile, incrementRating, decrementRating } from '../fetch-utils.js';
+import { getUser, sendMessage, checkAuth, getProfile, incrementRating, decrementRating, logout } from '../fetch-utils.js';
 
 import { renderMessages, renderRating } from '../render-utils.js';
 
@@ -8,20 +8,13 @@ const id = params.get('id');
 
 const upButton = document.querySelector('.up-vote');
 const downButton = document.querySelector('.down-vote');
-const ratingContainer = document.querySelector('.rating-container');
-const ratingH3 = document.querySelector('.rating');
-const voteUpButton = document.querySelector('.up-vote');
-const voteDownButton = document.querySelector('.down-vote');
-const messagesHeader = document.querySelector('.messages-header');
-const messagesDiv = document.querySelector('.messages');
-const sendMessageH3 = document.querySelector('.send-message');
 const return2ProfilesButton = document.getElementById('back-to-profiles');
-
-const messageContainer = document.querySelector('.message-container');
 const profileContainer = document.querySelector('.profile-container');
 const usernameHeader = document.querySelector('.username-header');
 const usernameEl = document.querySelector('.username');
 const form = document.querySelector('form');
+
+const logoutButton = document.getElementById('logout');
 
 window.addEventListener('load', async ()=>{
 
@@ -75,4 +68,8 @@ form.addEventListener('submit', async (e) => {
 
     await fetchAndDisplay();
 
+});
+
+logoutButton.addEventListener('click', () => {
+    logout();
 });
