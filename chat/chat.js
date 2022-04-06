@@ -10,6 +10,12 @@ checkAuth();
 const allChatsEl = document.querySelector('.all-chats');
 const formEl = document.querySelector('form');
 
+const allEmployeesButton = document.getElementById('back-to-profiles');
+
+allEmployeesButton.addEventListener('click', () => {
+    window.location.href = '../employees';
+});
+
 formEl.addEventListener('submit', async e => {
     e.preventDefault();
 
