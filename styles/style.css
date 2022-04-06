@@ -22,6 +22,11 @@ body {
     background-color: var(--color2);
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -215,11 +220,13 @@ button:hover {
     color:  rgb(252, 173, 173);
 }
 
-.main {
-    width: 100%;
+/* styling the chat room */
+
+main {
+    width: 100;
 }
 
-.chat-room {
+.chatroom {
     width: 90%;
     height: 80vh;
     border: dotted 1px black;
@@ -228,17 +235,38 @@ button:hover {
 }
 
 .input-area input {
-    border-top: dotted 1px black;
-    padding: 5px;
+    width: 90%;
+    /* border: none; */
+    text-align: right;
 }
 
-.input:focus {
+input:focus {
     outline: none;
     background-color: lightblue;
+}
+
+.input-area {
+    border-top: dotted 1px black;
+    padding: 5px;
 }
 
 .chat-message {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+p {
+    margin: 10px;
+}
+
+.chat-message .sender {
+    color: blue;
+    font-family: 1.2rem;
+    margin: 0;
+}
+
+.is-me {
+    border: solid 1px black;
+    color: red !important;
 }
