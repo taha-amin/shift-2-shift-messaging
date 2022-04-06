@@ -214,3 +214,9 @@ button:hover {
     margin-left: 12%;
     color:  rgb(252, 173, 173);
 }
+
+.all-chats {
+    width: 100%;
+    height: 80vh;
+    border: dotted solid 1px black;
+}

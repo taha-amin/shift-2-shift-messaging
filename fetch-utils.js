@@ -5,7 +5,7 @@ const SUPABASE_URL = 'https://wkkubdeijvrntdmunqer.supabase.co';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-//
+//this is an async function that will allow us to 
 export async function sendChat(someMessage) {
     const response = await client
         .from()
