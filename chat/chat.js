@@ -20,11 +20,11 @@ formEl.addEventListener('submit', async e => {
     formEl.reset();
 });
 
-window.addEventListener('load', async() => {
+window.addEventListener('load', async () => {
     await client
         .from('chats')
         .on('INSERT', (payload) => {
-            const currentUser = getUser();
+            const currentUser = getProfile();
 
             const chatItemOuterEl = document.createElement('div');
             const chatMessageEl = document.createElement('p');
@@ -45,5 +45,4 @@ window.addEventListener('load', async() => {
             chatItemOuterEl.append(chatMessageEl, chatSenderEl);
             allChatsEl.append(chatItemOuterEl);
         });
-        .subscribe()
-})
+});
