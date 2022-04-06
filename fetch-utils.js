@@ -8,11 +8,11 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 //this is an async function that will allow us to 
 export async function sendChat(someMessage) {
     const response = await client
-        .from()
+        .from('chats')
         .insert({
-            ?: someMessage
+            text: someMessage
         })
-        .single()
+        .single();
 
     return checkError(response);
 }
