@@ -2,7 +2,7 @@ import {
     checkAuth,
     sendChat,
     client,
-    getUser
+    getUser,
 } from '../fetch-utils.js';
 
 checkAuth();
@@ -41,6 +41,10 @@ window.addEventListener('load', async () => {
             const chatItemOuterEl = document.createElement('div');
             const chatMessageEl = document.createElement('p');
             const chatSenderEl = document.createElement('p');
+
+            chatSenderEl.addEventListener('click', async () => {
+                window.location.href = `../employee/?id=${getUser.id}`;
+            });
 
             chatSenderEl.classList.add('sender');
 
