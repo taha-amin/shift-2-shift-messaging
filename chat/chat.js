@@ -2,7 +2,7 @@ import {
     checkAuth,
     sendChat,
     client,
-    getProfile
+    getUser
 } from '../fetch-utils.js';
 
 checkAuth();
@@ -21,16 +21,22 @@ formEl.addEventListener('submit', async e => {
 
     const data = new FormData(formEl);
 
-    await sendChat(data.get('message'));
+    await sendChat({
+        text: data.get('message'),
+        sender_email: currentUser.email,
+        user_id: currentUser.id
+    });
 
     formEl.reset();
 });
+
+const currentUser = getUser();
 
 window.addEventListener('load', async () => {
     await client
         .from('chats')
         .on('INSERT', (payload) => {
-            const currentUser = getProfile();
+            const currentUser = getUser();
 
             const chatItemOuterEl = document.createElement('div');
             const chatMessageEl = document.createElement('p');
@@ -50,5 +56,6 @@ window.addEventListener('load', async () => {
             //append to the DOM
             chatItemOuterEl.append(chatMessageEl, chatSenderEl);
             allChatsEl.append(chatItemOuterEl);
-        });
+        })
+        .subscribe();
 });

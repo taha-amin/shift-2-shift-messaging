@@ -9,9 +9,7 @@ export const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 export async function sendChat(someMessage) {
     const response = await client
         .from('chats')
-        .insert({
-            text: someMessage
-        })
+        .insert(someMessage)
         .single();
 
     return checkError(response);
