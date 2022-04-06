@@ -215,12 +215,30 @@ button:hover {
     color:  rgb(252, 173, 173);
 }
 
-.all-chats {
-    width: 100%;
-    height: 80vh;
-    border: dotted solid 1px black;
-}
-
 .main {
     width: 100%;
+}
+
+.chat-room {
+    width: 90%;
+    height: 80vh;
+    border: dotted 1px black;
+    display: grid;
+    grid-template-rows: 19fr 1fr;
+}
+
+.input-area input {
+    border-top: dotted 1px black;
+    padding: 5px;
+}
+
+.input:focus {
+    outline: none;
+    background-color: lightblue;
+}
+
+.chat-message {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
