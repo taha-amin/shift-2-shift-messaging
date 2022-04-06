@@ -7,7 +7,7 @@ import {
 
 checkAuth();
 
-const allChatsEl = document.querySelector('.all-chats');
+const allChatsEl = document.getElementById('all-chats');
 const formEl = document.querySelector('form');
 
 const allEmployeesButton = document.getElementById('back-to-profiles');
@@ -35,7 +35,7 @@ const currentUser = getUser();
 window.addEventListener('load', async () => {
     await client
         .from('chats')
-        .on('INSERT', (payload) => {
+        .on('INSERT', payload => {
             const currentUser = getUser();
 
             const chatItemOuterEl = document.createElement('div');
