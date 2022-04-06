@@ -5,10 +5,6 @@ const SUPABASE_URL = 'https://wkkubdeijvrntdmunqer.supabase.co';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-
-
-
-
 export async function getProfiles() {
     const response = await client
         .from('profiles')
