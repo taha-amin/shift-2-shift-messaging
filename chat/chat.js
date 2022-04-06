@@ -42,9 +42,9 @@ window.addEventListener('load', async () => {
             const chatMessageEl = document.createElement('p');
             const chatSenderEl = document.createElement('p');
 
-            chatSenderEl.addEventListener('click', async () => {
-                window.location.href = `../employee/?id=${getUser.id}`;
-            });
+            // chatSenderEl.addEventListener('click', async () => {
+            //     window.location.href = `../employee/?id=${getUser.id}`;
+            // });
 
             chatSenderEl.classList.add('sender');
 
