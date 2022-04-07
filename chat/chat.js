@@ -43,10 +43,10 @@ window.addEventListener('load', async () => {
             const chatMessageEl = document.createElement('p');
             const chatSenderEl = document.createElement('p');
 
+            //inform chat when new user joins
             const userJoinedEl = document.createElement('p');
             userJoinedEl.classList.add('user-joined');
-            
-            userJoinedEl.textContent = `${currentUser} joined chat`;
+            userJoinedEl.textContent = `${currentUser.email} joined chat`;
 
             chatSenderEl.classList.add('sender');
 
@@ -55,6 +55,7 @@ window.addEventListener('load', async () => {
             }
 
             chatItemOuterEl.classList.add('chat-message');
+
             // chatSenderEl.addEventListener('click', async (e) => {
             //     console.log(e);
             //     window.location.href = `../employee/?id=${currentUser.id}`;
@@ -66,6 +67,8 @@ window.addEventListener('load', async () => {
             //append to the DOM
             chatItemOuterEl.append(chatMessageEl, chatSenderEl);
             allChatsEl.append(chatItemOuterEl);
+
+            return userJoinedEl;
         })
         .subscribe();
 });
