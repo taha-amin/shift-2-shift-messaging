@@ -272,3 +272,13 @@ p {
     color: red !important;
 
 }
+
+.input-area p {
+    color: blue;
+    opacity: .4;
+}
+
+.user-joined {
+    color: blue;
+    opacity: .4;
+}

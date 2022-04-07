@@ -1,9 +1,10 @@
-// import { fetchAndDisplay } from '../employee/employee.js';
+//import { fetchAndDisplay } from '../employee/employee.js';
 import {
     checkAuth,
     sendChat,
     client,
-    getUser,
+    getUser
+    // getProfile,
 } from '../fetch-utils.js';
 
 checkAuth();
@@ -34,27 +35,34 @@ formEl.addEventListener('submit', async e => {
 const currentUser = getUser();
 
 window.addEventListener('load', async () => {
+    // const profile = await getProfile();
+    console.log(currentUser);
     await client
         .from('chats')
         .on('INSERT', payload => {
-            const currentUser = getUser();
-            // const profile = getProfile();
+            // const currentUser = getUser();
 
             const chatItemOuterEl = document.createElement('div');
             const chatMessageEl = document.createElement('p');
             const chatSenderEl = document.createElement('p');
 
-            // chatSenderEl.addEventListener('click', async () => {
-            //     fetchAndDisplay(profile);
-            // });
+            const userJoinedEl = document.createElement('p');
+            userJoinedEl.classList.add('user-joined');
+            
+            userJoinedEl.textContent = `${currentUser} joined chat`;
 
             chatSenderEl.classList.add('sender');
+            console.log(currentUser);
 
             if (payload.new.sender_email === currentUser.email) {
                 chatSenderEl.classList.add('is-me');
             }
 
             chatItemOuterEl.classList.add('chat-message');
+            // chatSenderEl.addEventListener('click', async (e) => {
+            //     console.log(e);
+            //     window.location.href = `../employee/?id=${currentUser.id}`;
+            // });
 
             chatSenderEl.textContent = payload.new.sender_email;
             chatMessageEl.textContent = payload.new.text;
