@@ -3,9 +3,14 @@ import { checkAuth, getProfiles, logout } from '../fetch-utils.js';
 checkAuth();
 
 const logoutButton = document.getElementById('logout');
+const chatButton = document.getElementById('chat');
 
 logoutButton.addEventListener('click', () => {
     logout();
+});
+
+chatButton.addEventListener('click', () => {
+    window.location.href = '../chat';
 });
 
 const employeeListEl = document.querySelector('.employee-list');

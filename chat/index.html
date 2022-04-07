@@ -10,28 +10,33 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
-    <title>Employees List</title>
+    <title>Document</title>
 </head>
 
-<body class="body-employees">
-    <header class="header-employees">
+<body>
+    <header>
         <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
+            <button id="back-to-profiles">Return to Profiles</button>
         </div>
     </header>
-    <button id="chat">Chat</button>
-    <button id="logout">Logout</button>
-    <main>
-        <h1>All Employees</h1>
 
-        <div class="employee-list">
-            
+    <main>
+        <div class="chatroom">
+            <div id="all-chats">
+
+            </div>
+            <div class="input-area">
+                <form>
+                    <p>user@user.com joined chat</p>
+                    <p>another@user.com joined chat</p>
+                    <input name="message" />
+                    <button>send</button>
+                </form>
+            </div>
         </div>
     </main>
-    <footer>
-        <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
-    </footer>
-    <script type="module" src="./employees.js"></script>
+
+    <script type="module" src="./chat.js"></script>
 </body>
 
 </html>
