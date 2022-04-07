@@ -1,3 +1,4 @@
+// import { fetchAndDisplay } from '../employee/employee.js';
 import {
     checkAuth,
     sendChat,
@@ -37,13 +38,14 @@ window.addEventListener('load', async () => {
         .from('chats')
         .on('INSERT', payload => {
             const currentUser = getUser();
+            // const profile = getProfile();
 
             const chatItemOuterEl = document.createElement('div');
             const chatMessageEl = document.createElement('p');
             const chatSenderEl = document.createElement('p');
 
             // chatSenderEl.addEventListener('click', async () => {
-            //     window.location.href = `../employee/?id=${getUser.id}`;
+            //     fetchAndDisplay(profile);
             // });
 
             chatSenderEl.classList.add('sender');
