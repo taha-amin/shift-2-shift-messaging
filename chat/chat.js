@@ -1,10 +1,8 @@
-//import { fetchAndDisplay } from '../employee/employee.js';
 import {
     checkAuth,
     sendChat,
     client,
-    getUser
-    // getProfile,
+    getUser,
 } from '../fetch-utils.js';
 
 checkAuth();
@@ -35,12 +33,11 @@ formEl.addEventListener('submit', async e => {
 const currentUser = getUser();
 
 window.addEventListener('load', async () => {
-    // const profile = await getProfile();
     console.log(currentUser);
+
     await client
         .from('chats')
         .on('INSERT', payload => {
-            // const currentUser = getUser();
 
             const chatItemOuterEl = document.createElement('div');
             const chatMessageEl = document.createElement('p');
@@ -52,7 +49,6 @@ window.addEventListener('load', async () => {
             userJoinedEl.textContent = `${currentUser} joined chat`;
 
             chatSenderEl.classList.add('sender');
-            console.log(currentUser);
 
             if (payload.new.sender_email === currentUser.email) {
                 chatSenderEl.classList.add('is-me');
